@@ -1,0 +1,48 @@
+package Devoir;
+
+public class CompteBancaire {
+	private static CompteBancaire C1;
+	private static CompteBancaire C2;
+	private int numCompte;
+	private double solde;
+	private String titulaire;
+	
+	public CompteBancaire(int numCompte, String titulaire, double solde) {
+		this.numCompte = numCompte;
+		this.titulaire = titulaire;
+		this.solde = solde;
+		
+	}
+	public void deposer(double montant) {
+		if(montant > 0) {
+			solde += montant;
+			System.out.println("Dépôt de " + montant + " gnf éffectué.");
+		} else {
+			System.out.println("Le montant à dépôser doit être positif. ");
+		}
+	
+	public void retirer(double montant) {
+		if (montant > 0 && solde >= montant ) {
+			solde -= montant;
+			System.out.println("Rétrait de " + montant + " gnf éffectué.");
+		}else System.out.println("Solde insuffisant ou montant à rétirer est invalide.");
+			
+	} 
+	
+	
+	public void afficheSolde() {
+		System.out.println("Le solde du compte " + numCompte + " de " + titulaire + " est de " + solde + " gnf.");
+	}
+	public static void main(String[] args) {
+		
+		CompteBancaire.C1 = new CompteBancaire(1234, "Diallo Mamadou", 1000);
+		CompteBancaire.C2 = new CompteBancaire(5678, "Barry Adama", 3000);
+		C1.afficheSolde();
+		C1.deposer(500);
+		C1.retirer(3000);
+		C1.afficheSolde();
+		
+		C2.retirer(5000);
+	}
+
+ }
