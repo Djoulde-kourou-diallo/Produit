@@ -33,7 +33,7 @@ public class Voiture {
 		V1.affiche();
 		V2.affiche();
 		V3.affiche();
-		System.out.println("Nombre total des voitures :" + Voiture.getNbVoitures());
+		System.out.println("Nombre total des voitures :" + Voiture.getNbVoitures())
 	}
 
 }
