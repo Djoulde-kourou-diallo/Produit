@@ -1,0 +1,39 @@
+package Devoir;
+
+public class Rectangle {
+	private double largeur;
+	private double hauteur;
+	
+	public Rectangle(double largeur, double hauteur) {
+		this.largeur = largeur;
+		this.hauteur = hauteur;
+	}
+	
+	public double calculSurf() {
+		return largeur * hauteur;
+	}
+	
+	public double calculPer() {
+		return 2 *(largeur + hauteur);
+	}
+	
+	public static boolean estCarre(Rectangle R) {
+		return R.largeur == R.hauteur ;
+	}
+
+	public static void main(String[] args) {
+  Rectangle R1 = new Rectangle(5, 3);
+		Rectangle R2 = new Rectangle(4, 4);
+		
+		System.out.println("Rectangle 1 :");
+		System.out.println("Surface :" + R1.calculSurf());
+		System.out.println("Perimetre :" + R1.calculPer());
+		System.out.println("Est carré ? " + Rectangle.estCarre(R1));
+		
+		System.out.println("\nRectangle 2 :");
+		System.out.println("Surface :" + R2.calculSurf());
+		System.out.println("Perimetre :" + R2.calculPer());
+		System.out.println("Est carré ? " + Rectangle.estCarre(R2));
+	}
+
+}
